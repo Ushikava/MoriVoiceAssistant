@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VoiceRecognition</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main_table">
+        <table border="0" style="position: absolute;  height: 100%; width: 100%;">
+            <tr>
+                <td rowspan="2" width="30%">
+                    <div class="data_info">
+                        <table border="1" style="height: 100%; width: 100%;">
+                            <tr>
+                                <td>
+                                    <div class="settings-field">
+                                        <label class="settings-field__label" for="msg_length">Длина сообщения</label>
+                                        <input class="settings-field__input" type="text" name="msg_length"
+                                               id="msg_length" placeholder="200" value="10"
+                                               onchange="msg_length_change()">
+                                    </div>
+                                    <div class="settings-field">
+                                        <label class="settings-field__label" for="msg_repetition">Повторения</label>
+                                        <input class="settings-field__input" type="text" name="msg_repetition"
+                                               id="msg_repetition" placeholder="5.0" value="5.0"
+                                               onchange="msg_repetition_change()">
+                                    </div>
+                                    <div class="settings-field">
+                                        <label class="settings-field__label" for="msg_top_k">K-фильтр</label>
+                                        <input class="settings-field__input" type="text" name="msg_top_k"
+                                               id="msg_top_k" placeholder="10" value="10"
+                                               onchange="msg_top_k_change()">
+                                    </div>
+                                    <div class="settings-field">
+                                        <label class="settings-field__label" for="msg_top_p">P-фильтр</label>
+                                        <input class="settings-field__input" type="text" name="msg_top_p"
+                                               id="msg_top_p" placeholder="0.95" value="0.95"
+                                               onchange="msg_top_p_change()">
+                                    </div>
+                                    <div class="settings-field">
+                                        <label class="settings-field__label" for="msg_temperature">Температура</label>
+                                        <input class="settings-field__input" type="text" name="msg_temperature"
+                                               id="msg_temperature" placeholder="1" value="1"
+                                               onchange="msg_temperature_change()">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img id="character" name="character" src="character.png">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td colspan="3" width="70%">
+                    <div class="messenger" id="messenger_id">
+                        <!--Messages are here-->
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" width="60%" height="50ch">
+                    <textarea id="id_msg" name="message" cols="125" placeholder="Напишите сообщение..."></textarea>
+                </td>
+                <td width="5%" align="center">
+                    <button id="text_message" type="submit" onclick="send_text_msg()">
+                        <img src="send-white2.png" border="0"/>
+                    </button>
+                </td>
+                <td width="5%" align="center">
+                    <button id="voice_message" type="submit" onclick="send_voice_msg()">
+                        <img src="voice-white.png" border="0"/>
+                    </button>
+                </td>
+            </tr>
+        </table>
+  </div>
+</body>
+
+<script type="text/javascript" src="/eel.js"></script>
+<script src="script.js"></script>
+
+</html>
